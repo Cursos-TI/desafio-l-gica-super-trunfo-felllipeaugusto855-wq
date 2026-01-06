@@ -18,7 +18,7 @@ int main() {
     strcpy(carta_rio.nome_cidade, "Rio de Janeiro");
     strcpy(carta_rio.estado, "Rio de Janeiro");
     strcpy(carta_rio.codigo, "A01");
-    carta_rio.populacao = 6.731;
+    carta_rio.populacao = 6.731;       // estimativa IBGE julho/2025
     carta_rio.area = 1200.3;
     carta_rio.pib = 360.0;
     carta_rio.pontos_turisticos = 58;
@@ -28,7 +28,7 @@ int main() {
     strcpy(carta_goiania.nome_cidade, "Goiânia");
     strcpy(carta_goiania.estado, "Goiás");
     strcpy(carta_goiania.codigo, "A03");
-    carta_goiania.populacao = 1.503;
+    carta_goiania.populacao = 1.503;   // estimativa IBGE julho/2025
     carta_goiania.area = 729.3;
     carta_goiania.pib = 75.8;
     carta_goiania.pontos_turisticos = 8;
@@ -44,19 +44,7 @@ int main() {
     printf("Área: %.1f km²\n", carta_goiania.area);
     printf("Pontos Turísticos: %d\n\n", carta_goiania.pontos_turisticos);
 
-    // === COMPARAÇÃO DE ÁREA ===
-    printf("=== Comparando ÁREA ===\n");
-
-    if (carta_rio.area > carta_goiania.area) {
-        printf("Rio de Janeiro vence! (Área maior: %.1f > %.1f km²)\n", 
-               carta_rio.area, carta_goiania.area);
-    } else if (carta_rio.area < carta_goiania.area) {
-        printf("Goiânia vence! (Área maior: %.1f > %.1f km²)\n", 
-               carta_goiania.area, carta_rio.area);
-    } else {
-        printf("Empate! Ambas têm a mesma área.\n");
-    }
-
     return 0;
 }
 
+   
