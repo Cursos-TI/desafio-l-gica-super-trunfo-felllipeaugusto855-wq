@@ -1,43 +1,62 @@
 #include <stdio.h>
+#include <string.h>
 
-// Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
+// Definição da estrutura de uma carta do Super Trunfo
+typedef struct {
+    char nome_cidade[50];
+    char estado[30];
+    char codigo[10];
+    float populacao;           // em milhões
+    float area;                // em km²
+    float pib;                 // em bilhões de reais
+    int pontos_turisticos;
+} Carta;
 
 int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+    // Carta do Rio de Janeiro
+    Carta carta_rio;
+    strcpy(carta_rio.nome_cidade, "Rio de Janeiro");
+    strcpy(carta_rio.estado, "Rio de Janeiro");
+    strcpy(carta_rio.codigo, "A01");
+    carta_rio.populacao = 6.731;
+    carta_rio.area = 1200.3;
+    carta_rio.pib = 360.0;
+    carta_rio.pontos_turisticos = 58;
 
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+    // Carta de Goiânia
+    Carta carta_goiania;
+    strcpy(carta_goiania.nome_cidade, "Goiânia");
+    strcpy(carta_goiania.estado, "Goiás");
+    strcpy(carta_goiania.codigo, "A03");
+    carta_goiania.populacao = 1.503;
+    carta_goiania.area = 729.3;
+    carta_goiania.pib = 75.8;
+    carta_goiania.pontos_turisticos = 8;
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+    // Exibindo as cartas
+    printf("=== Carta Super Trunfo - Rio de Janeiro ===\n");
+    printf("Cidade: %s\n", carta_rio.nome_cidade);
+    printf("Área: %.1f km²\n", carta_rio.area);
+    printf("Pontos Turísticos: %d\n\n", carta_rio.pontos_turisticos);
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    printf("=== Carta Super Trunfo - Goiânia ===\n");
+    printf("Cidade: %s\n", carta_goiania.nome_cidade);
+    printf("Área: %.1f km²\n", carta_goiania.area);
+    printf("Pontos Turísticos: %d\n\n", carta_goiania.pontos_turisticos);
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+    // === COMPARAÇÃO DE ÁREA ===
+    printf("=== Comparando ÁREA ===\n");
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    if (carta_rio.area > carta_goiania.area) {
+        printf("Rio de Janeiro vence! (Área maior: %.1f > %.1f km²)\n", 
+               carta_rio.area, carta_goiania.area);
+    } else if (carta_rio.area < carta_goiania.area) {
+        printf("Goiânia vence! (Área maior: %.1f > %.1f km²)\n", 
+               carta_goiania.area, carta_rio.area);
+    } else {
+        printf("Empate! Ambas têm a mesma área.\n");
+    }
 
     return 0;
 }
+
